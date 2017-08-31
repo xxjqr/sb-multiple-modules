@@ -9,6 +9,4 @@ import java.util.List;
  */
 public interface PostService {
     List<Post> listPost();
-//    public List<Post> listPost();
-//    public void createPost(Post post);
 }
