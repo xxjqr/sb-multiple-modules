@@ -33,6 +33,12 @@
 
 		<dependency>
 			<groupId>com.xxjqr.multiple_modules</groupId>
+			<artifactId>comm</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.xxjqr.multiple_modules</groupId>
 			<artifactId>community</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>

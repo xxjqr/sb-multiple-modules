@@ -2,11 +2,16 @@ package com.xxjqr.multiple_modules.app.article.controller;
 
 import com.xxjqr.multiple_modules.app.article.service.ArticleService;
 import com.xxjqr.multiple_modules.core.article.po.Article;
+import com.xxjqr.multiple_modules.core.article.po.ArticleDto;
+import com.xxjqr.multiple_modules.exception.BusinessError;
+import com.xxjqr.multiple_modules.exception.BusinessException;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -19,7 +24,15 @@ public class ArticleController {
     private ArticleService articleService;
 
     @RequestMapping(value = "list",method = RequestMethod.GET)
-    public List<Article> listArticle(){
+    public List<Article> listArticle() throws BusinessException {
+        Article article = null;
+        if (article==null)
+            throw new BusinessException(BusinessError.参数错误);
         return articleService.listArticle();
+    }
+
+    @PostMapping("")
+    public void createArticle(@Valid ArticleDto articleDto){
+
     }
 }
