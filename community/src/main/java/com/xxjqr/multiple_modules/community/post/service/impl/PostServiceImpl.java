@@ -2,6 +2,8 @@ package com.xxjqr.multiple_modules.community.post.service.impl;
 
 import com.xxjqr.multiple_modules.community.post.service.PostService;
 import com.xxjqr.multiple_modules.core.community.mapper.PostMapper;
+import com.xxjqr.multiple_modules.core.community.po.ActServe;
+import com.xxjqr.multiple_modules.core.community.po.ActivityServe;
 import com.xxjqr.multiple_modules.core.community.po.Post;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +20,9 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<Post> listPost() {
-        return postMapper.selectAll();
+        ActServe actServe = postMapper.listActAndServe();
+        return null;
+//        return postMapper.selectAll();
     }
 
 //    @Override
