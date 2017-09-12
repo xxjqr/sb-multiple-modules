@@ -16,15 +16,11 @@ import java.util.List;
  * Created by xxjqr on 2017/8/27.
  */
 @RestController
-@RequestMapping(value = "/rest")
+@RequestMapping(value = "/rest/post")
 public class PostController {
     @Resource
     private PostService postService;
 
-    @RequestMapping(value = "post/list")
-    public WebResponse listPost() throws BusinessException {
-        return postService.listPost();
-    }
 
     @PostMapping(value = "post")
     public WebResponse createPost(@Valid @RequestBody  PostDto postDto){

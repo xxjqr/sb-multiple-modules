@@ -3,17 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:/IdeaProjects/demo/sb-multiple-modules/app/app.iml" filepath="D:/IdeaProjects/demo/sb-multiple-modules/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/comm/comm.iml" filepath="$PROJECT_DIR$/comm/comm.iml" />
       <module fileurl="file://$PROJECT_DIR$/community/community.iml" filepath="$PROJECT_DIR$/community/community.iml" />
-      <module fileurl="file://D:/IdeaProjects/demo/sb-multiple-modules/community/community.iml" filepath="D:/IdeaProjects/demo/sb-multiple-modules/community/community.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
-      <module fileurl="file://D:/IdeaProjects/demo/sb-multiple-modules/core/core.iml" filepath="D:/IdeaProjects/demo/sb-multiple-modules/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/parent.iml" filepath="$PROJECT_DIR$/parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/task/task.iml" filepath="$PROJECT_DIR$/task/task.iml" />
-      <module fileurl="file://D:/IdeaProjects/demo/sb-multiple-modules/task/task.iml" filepath="D:/IdeaProjects/demo/sb-multiple-modules/task/task.iml" />
       <module fileurl="file://$PROJECT_DIR$/web/web.iml" filepath="$PROJECT_DIR$/web/web.iml" />
-      <module fileurl="file://D:/IdeaProjects/demo/sb-multiple-modules/web/web.iml" filepath="D:/IdeaProjects/demo/sb-multiple-modules/web/web.iml" />
     </modules>
   </component>
 </project>

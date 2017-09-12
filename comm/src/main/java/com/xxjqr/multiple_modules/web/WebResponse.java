@@ -18,6 +18,11 @@ public class WebResponse {
         this.message=message;
     }
 
+    public WebResponse(Object data){
+        this.data = data;
+        this.code = code;
+    }
+
     public WebResponse(Integer code,String message,Object data){
         this(code,message);
         this.data=data;

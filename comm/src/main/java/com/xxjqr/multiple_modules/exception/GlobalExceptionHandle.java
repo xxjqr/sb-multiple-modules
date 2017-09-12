@@ -24,6 +24,7 @@ public class GlobalExceptionHandle {
             webResponse.setCode(200);
             webResponse.setMessage(((BindException) e).getBindingResult().getAllErrors().get(0).getDefaultMessage());
         }else {
+            e.printStackTrace();
             webResponse.setCode(500);
             webResponse.setMessage("Internal Server Error");
         }

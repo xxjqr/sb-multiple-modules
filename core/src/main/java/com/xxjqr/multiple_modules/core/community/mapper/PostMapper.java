@@ -14,5 +14,4 @@ import java.util.List;
  * Created by xxjqr on 2017/8/27.
  */
 public interface PostMapper extends MyMapper<Post>{
-    ActServe listActAndServe();
 }

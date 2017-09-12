@@ -22,19 +22,6 @@ public class PostServiceImpl implements PostService {
     @Resource
     private PostMapper postMapper;
 
-    @Override
-<<<<<<< HEAD
-    public List<Post> listPost() {
-        ActServe actServe = postMapper.listActAndServe();
-        return null;
-//        return postMapper.selectAll();
-=======
-    public WebResponse listPost() throws BusinessException {
-        List<Post> posts = postMapper.selectAll();
-        if(posts==null)
-            throw new BusinessException(200,"没有帖子");
-        return new WebResponse(200,"创建成功",posts);
-    }
 
     /**
      * 创建帖子
@@ -47,7 +34,6 @@ public class PostServiceImpl implements PostService {
         BeanUtils.copyProperties(postDto,post);
         postMapper.insert(post);
         return new WebResponse(200,"创建成功");
->>>>>>> 668d5650a210ca57bf0836995ab0ab6b3256cd11
     }
 
 }
