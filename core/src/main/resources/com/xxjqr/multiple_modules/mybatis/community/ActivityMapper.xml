@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xxjqr.multiple_modules.core.community.mapper.PostMapper">
+
+    <resultMap type="com.xxjqr.multiple_modules.core.community.po.ActServe" id="actServe" autoMapping="true">
+        <id column="id" property="id"/>
+        <collection property="actServeList" ofType="com.xxjqr.multiple_modules.core.community.po.ActivityServe" autoMapping="true">
+            <result column="serviceId" property="serviceId"/>
+            <result column="serviceNum" property="serviceNum"/>
+        </collection>
+    </resultMap>
+
+    <select id="listActAndServe" resultMap="actServe">
+      SELECT act.id,act.title,actS.service_id AS serviceId,actS.service_num AS serviceNum from t_activity act LEFT JOIN t_activity_serve actS on act.id = actS.activity_id
+    </select>
+
+</mapper>
