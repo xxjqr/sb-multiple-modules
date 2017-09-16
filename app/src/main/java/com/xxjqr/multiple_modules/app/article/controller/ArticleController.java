@@ -1,10 +1,10 @@
 package com.xxjqr.multiple_modules.app.article.controller;
 
 import com.xxjqr.multiple_modules.app.article.service.ArticleService;
+import com.xxjqr.multiple_modules.comm.exception.BusinessError;
+import com.xxjqr.multiple_modules.comm.exception.BusinessException;
 import com.xxjqr.multiple_modules.core.article.po.Article;
 import com.xxjqr.multiple_modules.core.article.po.ArticleDto;
-import com.xxjqr.multiple_modules.exception.BusinessError;
-import com.xxjqr.multiple_modules.exception.BusinessException;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

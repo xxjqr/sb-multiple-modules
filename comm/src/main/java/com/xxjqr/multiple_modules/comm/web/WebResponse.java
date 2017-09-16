@@ -20,7 +20,7 @@ public class WebResponse {
 
     public WebResponse(Object data){
         this.data = data;
-        this.code = code;
+        this.code = 200;
     }
 
     public WebResponse(Integer code,String message,Object data){

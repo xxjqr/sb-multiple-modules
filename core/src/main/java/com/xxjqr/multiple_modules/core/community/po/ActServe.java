@@ -1,13 +1,10 @@
 package com.xxjqr.multiple_modules.core.community.po;
 
-import com.xxjqr.multiple_modules.core.comm.Annotation.TestAnnotation;
 
-import java.util.Date;
 import java.util.List;
 
 public class ActServe {
     private Integer id;
-    @TestAnnotation(addValue = "aaa")
     private String title;
     List<ActivityServe> actServeList;
 

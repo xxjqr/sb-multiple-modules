@@ -6,7 +6,6 @@ import com.xxjqr.multiple_modules.core.community.mapper.PostMapper;
 import com.xxjqr.multiple_modules.core.community.po.ActServe;
 import com.xxjqr.multiple_modules.core.community.po.ActivityServe;
 import com.xxjqr.multiple_modules.core.community.po.Post;
-import com.xxjqr.multiple_modules.exception.BusinessException;
 import com.xxjqr.multiple_modules.web.WebResponse;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;

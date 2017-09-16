@@ -1,4 +1,4 @@
-package com.xxjqr.multiple_modules.core.comm.Annotation;
+package com.xxjqr.multiple_modules.comm.Annotation;
 
 import com.fasterxml.jackson.annotation.JacksonAnnotationsInside;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -11,7 +11,8 @@ import java.lang.annotation.Target;
 @Target( {ElementType.FIELD, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 @JacksonAnnotationsInside
-@JsonSerialize(using = com.xxjqr.multiple_modules.core.comm.Serializer.TestSerializer.class)
-public @interface TestAnnotation {
-    String addValue() default "";
+@JsonSerialize(using = com.xxjqr.multiple_modules.comm.Serializer.MoneySerializer.class)
+public @interface MoneyAnno {
+    String moneyType() default "1";
+    String offset() default "2";
 }
