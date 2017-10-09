@@ -1,7 +1,7 @@
 package com.xxjqr.multiple_modules.core.prod.po;
 
 
-import com.xxjqr.multiple_modules.comm.Annotation.MoneyAnno;
+import com.xxjqr.multiple_modules.comm.annotation.MoneyAnno;
 import com.xxjqr.multiple_modules.comm.util.MoneyUtil;
 
 import javax.persistence.*;

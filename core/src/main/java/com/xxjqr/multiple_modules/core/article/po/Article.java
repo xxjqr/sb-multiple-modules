@@ -1,12 +1,15 @@
 package com.xxjqr.multiple_modules.core.article.po;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by xxjqr on 2017/8/26.
  */
 @Table(name = "t_article")
-public class Article {
+public class Article implements Serializable {
+
+    private static final long serialVersionUID = -8990314211269535243L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -65,5 +68,17 @@ public class Article {
 
     public void setReadNum(Integer readNum) {
         this.readNum = readNum;
+    }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", summary='" + summary + '\'' +
+                ", text='" + text + '\'' +
+                ", thumbNum=" + thumbNum +
+                ", readNum=" + readNum +
+                '}';
     }
 }

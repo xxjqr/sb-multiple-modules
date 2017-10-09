@@ -1,4 +1,4 @@
-package com.xxjqr.multiple_modules.core.comm;
+package com.xxjqr.multiple_modules.core.comm.mapper;
 
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.common.MySqlMapper;
