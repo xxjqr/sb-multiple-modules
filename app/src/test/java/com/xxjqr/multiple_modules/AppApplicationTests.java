@@ -6,11 +6,13 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -18,6 +20,9 @@ public class AppApplicationTests {
 
 	@Resource
 	private ArticleMapper articleMapper;
+
+	@Resource
+	private StringRedisTemplate stringRedisTemplate;
 
 	@Test
 	@Ignore
@@ -32,7 +37,22 @@ public class AppApplicationTests {
 	}
 
 	@Test
+	public void testRedis(){
+//		stringRedisTemplate.opsForValue().set("key","value2");
+//		stringRedisTemplate.opsForHash().put("user","3","iphone");
+//		stringRedisTemplate.opsForHash().put("user","4","hw");
+		Map<Object,Object> map = stringRedisTemplate.opsForHash().entries("user");
+		for (Object in : map.keySet()) {
+			//map.keySet()返回的是所有key的值
+			String str = (String) map.get(in);//得到每个key多对用value的值
+			System.out.println(in + "     " + str);
+		}
+	}
+
+	@Test
+	@Ignore
 	public void testUtil(){
-		List<Integer> a = Arrays.asList(2,3);
+		List<Integer> tmp = Arrays.asList(2,3);
+		System.out.println(tmp);
 	}
 }
