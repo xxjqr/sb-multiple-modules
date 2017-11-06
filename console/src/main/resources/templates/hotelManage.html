@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta name="context-path" th:content="@{/}" />
     <meta charset="UTF-8" />
     <title>Title</title>
     <!-- load css -->
@@ -21,8 +22,9 @@
         <table class="layui-table" lay-size="sm">
             <colgroup>
                 <col width="1" />
-                <col width="100" />
-                <col />
+                <col width="50" />
+                <col width="100"/>
+                <col width="200"/>
                 <col />
                 <col />
                 <col />
@@ -31,132 +33,37 @@
             </colgroup>
             <thead>
                 <tr>
-            <th><i class="iconfont icon-gouxuanqian icon" select="false" id="all_select"></i></th>
-            <th>昵称</th>
-            <th>加入时间</th>
-            <th>签名</th>
-            <th>a</th>
-            <th>b</th>
-            <th>c</th>
-            <th>操作</th>
-        </tr>
+                    <th><i class="iconfont icon-gouxuanqian icon" select="false" id="all_select"></i></th>
+                    <th>城市</th>
+                    <th>名称</th>
+                    <th>地址</th>
+                    <th>经度</th>
+                    <th>纬度</th>
+                    <th>联系方式</th>
+                    <th>评分</th>
+                    <th>主要设施</th>
+                    <th>酒店服务</th>
+                    <th>酒店设施</th>
+                    <th>房间设施</th>
+                    <th>图片</th>
+                    <th>介绍</th>
+                </tr>
             </thead>
             <tbody>
                 <tr>
-            <td><i class="iconfont icon-gouxuanqian" select="false"></i></td>
-            <td>贤心</td>
-            <td>2016-11-29</td>
-            <td>人生就像是一场修行</td>
-            <td>a</td>
-            <td>b</td>
-            <td>c</td>
-            <td>
-                <i class="iconfont icon-xiangqing opr_icon"></i>
-                <i class="iconfont icon-bianji opr_icon"></i>
-                <i class="iconfont icon-dustbin opr_icon"></i>
-            </td>
-        </tr>
-                <tr>
-            <td><i class="iconfont icon-gouxuanqian" select="false"></i></td>
-            <td>许闲心</td>
-            <td>2016-11-28</td>
-            <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野</td>
-            <td>a</td>
-            <td>b</td>
-            <td>c</td>
-            <td>查看 编辑 删除</td>
-        </tr>
-                <tr>
                     <td><i class="iconfont icon-gouxuanqian" select="false"></i></td>
-                    <td>许闲心</td>
-                    <td>2016-11-28</td>
-                    <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野</td>
+                    <td>贤心</td>
+                    <td>2016-11-29</td>
+                    <td style="overflow: hidden;height: 10px">人生就像是一场修行生就像是一场生就像是一场生就像是一场生就像是一场生就像是一场生就像是一场生就像是一场生就像是一场生就像是一场生就像是一场生就像是一场生就像是一场生就像是一场生就像是一场生就像是一场生就像是一场</td>
                     <td>a</td>
                     <td>b</td>
                     <td>c</td>
-                    <td>查看 编辑 删除</td>
+                    <td>
+                        <i class="iconfont icon-xiangqing opr_icon"></i>
+                        <i class="iconfont icon-bianji opr_icon"></i>
+                        <i class="iconfont icon-dustbin opr_icon"></i>
+                    </td>
                 </tr>
-                <tr>
-                    <td><i class="iconfont icon-gouxuanqian" select="false"></i></td>
-                    <td>许闲心</td>
-                    <td>2016-11-28</td>
-                    <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野</td>
-                    <td>a</td>
-                    <td>b</td>
-                    <td>c</td>
-                    <td>查看 编辑 删除</td>
-                </tr>
-                <tr>
-                    <td><i class="iconfont icon-gouxuanqian" select="false"></i></td>
-                    <td>许闲心</td>
-                    <td>2016-11-28</td>
-                    <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野</td>
-                    <td>a</td>
-                    <td>b</td>
-                    <td>c</td>
-                    <td>查看 编辑 删除</td>
-                </tr>
-                <tr>
-                    <td><i class="iconfont icon-gouxuanqian" select="false"></i></td>
-                    <td>许闲心</td>
-                    <td>2016-11-28</td>
-                    <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野</td>
-                    <td>a</td>
-                    <td>b</td>
-                    <td>c</td>
-                    <td>查看 编辑 删除</td>
-                </tr>
-                <tr>
-                    <td><i class="iconfont icon-gouxuanqian" select="false"></i></td>
-                    <td>许闲心</td>
-                    <td>2016-11-28</td>
-                    <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野</td>
-                    <td>a</td>
-                    <td>b</td>
-                    <td>c</td>
-                    <td>查看 编辑 删除</td>
-                </tr>
-                <tr>
-                    <td><i class="iconfont icon-gouxuanqian" select="false"></i></td>
-                    <td>许闲心</td>
-                    <td>2016-11-28</td>
-                    <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野</td>
-                    <td>a</td>
-                    <td>b</td>
-                    <td>c</td>
-                    <td>查看 编辑 删除</td>
-                </tr>
-                <tr>
-                    <td><i class="iconfont icon-gouxuanqian" select="false"></i></td>
-                    <td>许闲心</td>
-                    <td>2016-11-28</td>
-                    <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野</td>
-                    <td>a</td>
-                    <td>b</td>
-                    <td>c</td>
-                    <td>查看 编辑 删除</td>
-                </tr>
-                <tr>
-                    <td><i class="iconfont icon-gouxuanqian" select="false"></i></td>
-                    <td>许闲心</td>
-                    <td>2016-11-28</td>
-                    <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野</td>
-                    <td>a</td>
-                    <td>b</td>
-                    <td>c</td>
-                    <td>查看 编辑 删除</td>
-                </tr>
-                <tr>
-                    <td><i class="iconfont icon-gouxuanqian" select="false"></i></td>
-                    <td>许闲心</td>
-                    <td>2016-11-28</td>
-                    <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野</td>
-                    <td>a</td>
-                    <td>b</td>
-                    <td>c</td>
-                    <td>查看 编辑 删除</td>
-                </tr>
-
             </tbody>
         </table>
 
@@ -179,6 +86,21 @@
 
         layui.use(['element','laypage'], function(){
             var laypage = layui.laypage;
+
+            var BASE_CONTEXT_PATH = $('meta[name=context-path]').attr("content");
+            BASE_CONTEXT_PATH = BASE_CONTEXT_PATH.substr(0, BASE_CONTEXT_PATH.length - 1);
+            console.log("路径:"+BASE_CONTEXT_PATH);
+
+            $.ajax({
+                url:BASE_CONTEXT_PATH+'rest/hotels',
+                success:function(data){
+                    console.log(JSON.stringify(data));
+                },
+                error:function(a,b,c){
+                    alert("请求失败："+b);
+                }
+            });
+
             laypage.render({
                 elem: 'my_page'
                 ,count: 70 //数据总数，从服务端得到

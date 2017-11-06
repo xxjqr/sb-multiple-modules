@@ -1,24 +1,21 @@
-package com.xxjqr.multiple_modules.core;
+package com.xxjqr.multiple_modules.core.ref;
 
 import com.xxjqr.multiple_modules.core.comm.mapper.MyMapper;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import tk.mybatis.spring.mapper.MapperScannerConfigurer;
 
-import javax.sql.DataSource;
 import java.util.Properties;
 
+/**
+ * Created by xxjqr on 2017/8/29.
+ */
 @Configuration
-public class CoreConfiguration {
-
+public class RefConfiguration {
     @Bean
     public MapperScannerConfigurer mapperScannerConfigurer(){
         MapperScannerConfigurer msc = new MapperScannerConfigurer();
-        msc.setBasePackage("com.xxjqr.multiple_modules.core.*.mapper");
+        msc.setBasePackage("com.xxjqr.multiple_modules.core.ref.mapper");
         msc.setMarkerInterface(MyMapper.class);//自定义的顶层mapper,切记不能放在普通mapper包下,不能让spring扫描到
         //如果使用除了Mapper<T>接口之外的其他接口,需要在这里配置
         Properties properties = new Properties();

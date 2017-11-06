@@ -1,4 +1,4 @@
-package com.xxjqr.multiple_modules.comm.util;
+package com.xxjqr.multiple_modules.core.comm.util;
 
 import com.github.pagehelper.ISelect;
 import com.github.pagehelper.PageHelper;

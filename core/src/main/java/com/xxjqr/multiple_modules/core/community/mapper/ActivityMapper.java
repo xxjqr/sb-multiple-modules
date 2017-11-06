@@ -5,6 +5,6 @@ import com.xxjqr.multiple_modules.core.community.po.ActCond;
 import com.xxjqr.multiple_modules.core.community.po.ActServe;
 import com.xxjqr.multiple_modules.core.community.po.Activity;
 
-public interface ActivityMapper extends MyMapper<Activity>{
+public interface ActivityMapper extends MyMapper<Activity> {
     ActServe listAct(ActCond param);
 }

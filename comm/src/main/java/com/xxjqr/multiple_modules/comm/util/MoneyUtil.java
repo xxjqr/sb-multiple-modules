@@ -16,6 +16,13 @@ public class MoneyUtil {
     public final static String jStr = "1";
     public final static String fStr = "2";
 
+    /**
+     *  格式化金额
+     * @param money 要格式化的 金额
+     * @param type 金额大小是元 角 分?
+     * @param offset 展示后面的几位小数(如若没有会用0占位)
+     * @return
+     */
     public static String formatMoney(Integer money,Integer type,Integer offset){
         //转成字符串
         String moneyStr = String.valueOf(money);

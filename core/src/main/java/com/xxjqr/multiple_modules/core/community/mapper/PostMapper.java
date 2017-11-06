@@ -6,5 +6,5 @@ import com.xxjqr.multiple_modules.core.community.po.Post;
 /**
  * Created by xxjqr on 2017/8/27.
  */
-public interface PostMapper extends MyMapper<Post>{
+public interface PostMapper extends MyMapper<Post> {
 }

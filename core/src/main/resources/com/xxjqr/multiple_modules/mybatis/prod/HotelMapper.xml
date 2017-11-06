@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xxjqr.multiple_modules.core.prod.mapper.HotelMapper">
+
+    <resultMap id="hotelListVo" type="com.xxjqr.multiple_modules.core.prod.vo.ConHotelListVo">
+        <id property="id" column="id"></id>
+        <result property="hotelFacilities" column="hotel_facilities"></result>
+        <result property="basicInfo" column="basic_info"></result>
+        <result property="mainFacilities" column="main_facilities"></result>
+        <result property="roomFacilities" column="room_facilities"></result>
+        <result property="hotelServes" column="hotel_serves"></result>
+    </resultMap>
+
+    <select id="getHotels" resultMap="hotelListVo">
+        SELECT H.id,A.area_name as city,H.name,H.address,H.lng,H.lat,H.contact,H.grade,H.price,H.main_facilities,H.basic_info,H.hotel_serves,H.hotel_facilities,H.room_facilities,H.imgs,H.introduce from t_hotel H left JOIN t_area A ON H.area_id = A.id
+    </select>
+</mapper>

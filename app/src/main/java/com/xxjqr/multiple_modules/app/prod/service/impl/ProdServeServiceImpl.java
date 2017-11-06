@@ -2,7 +2,6 @@ package com.xxjqr.multiple_modules.app.prod.service.impl;
 
 import com.xxjqr.multiple_modules.app.prod.service.ProdServeService;
 import com.xxjqr.multiple_modules.core.prod.mapper.ProdServeMapper;
-import com.xxjqr.multiple_modules.core.prod.po.ProdServe;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
