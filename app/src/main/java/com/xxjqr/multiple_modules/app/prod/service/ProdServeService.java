@@ -1,7 +1,5 @@
 package com.xxjqr.multiple_modules.app.prod.service;
 
-import com.xxjqr.multiple_modules.core.prod.po.ProdServe;
-
 import java.util.List;
 
 /**

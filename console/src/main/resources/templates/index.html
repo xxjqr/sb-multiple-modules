@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>瞎jb扯管理后台</title>
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- load css -->
+    <link rel="stylesheet" type="text/css" th:href="@{css/iconfont.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{plugin/layui/css/layui.css}" media="all" />
+
+    <style type="text/css">
+        .layui-body{
+            padding-left: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo logo">
+            <!--<img src="/admin/images/7_bai.png" alt="layui">-->
+        </div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-right">
+            <!--<li class="layui-nav-item"><a href="/test/config.html" target="_blank">打印配置</a></li>-->
+            <li class="layui-nav-item"><a href="/index/clearruntime.html">清除缓存</a></li>
+            <!--<li class="layui-nav-item"><a href="">通知(<strong style="color: red;">12</strong>)</a></li>-->
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="http://static7.calm7.com/upload/default/picture/59f968a444c59.png" class="layui-nav-img" />
+                    test123456                <span class="layui-nav-more"></span></a>
+                <dl class="layui-nav-child layui-anim layui-anim-upbit">
+                    <dd><a class="personal" href="/personal/portrait.html">修改头像</a></dd>
+                    <dd><a class="personal" href="/personal/updatepassword.html">修改密码</a></dd>
+                    <dd><a class="personal" href="/personal/updatenickname.html">修改昵称</a></dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+
+    <!--左边导航-->
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">商品管理
+                        <span class="layui-nav-more"></span>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a data-url="hotelManage.html" data-type="tabAdd" href="javascript:;">酒店管理</a></dd>
+                        <dd><a data-type="tabAdd" href="javascript:;">餐饮管理</a></dd>
+                        <dd><a data-type="tabAdd" href="javascript:;">定位点管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">解决方案<span class="layui-nav-more"></span></a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">列表一</a></dd>
+                        <dd><a href="javascript:;">列表二</a></dd>
+                    </dl>
+                </li>
+                <span class="layui-nav-bar" style="top: 22.5px; height: 0px; opacity: 0;"></span>
+            </ul>
+        </div>
+    </div>
+
+    <!--中间内容-->
+    <div class="layui-body">
+        <div class="layui-tab layui-tab-card larry-tab-box"  lay-filter="demo" lay-allowclose="true">
+            <!--tab头-->
+            <ul class="layui-tab-title">
+                <!--<li class="layui-this"><i class="iconfont icon-geren1"></i>-->
+                <!--<i class="layui-icon" style="font-size: 15px; color: #1E9FFF;">&#xe60c;</i>-->
+                <!--<em>个人信息</em>-->
+                <!--<i class="layui-icon layui-unselect layui-tab-close" data-id="1">ဆ</i>-->
+                <!--</li>-->
+            </ul>
+
+            <!--tab内容-->
+            <div class="layui-tab-content">
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<!--引入js-->
+<script type="text/javascript" th:src="@{js/jquery-3.2.1.min.js}" charset="utf-8"></script>
+<script type="text/javascript" th:src="@{plugin/layui/layui.js}" charset="utf-8"></script>
+
+<script type="text/javascript">
+
+    /*调整iframe高度*/
+    var iframeId;
+    function changeFrameHeight(){
+        var ifm= $('#'+iframeId);
+        $(ifm).height(ifm.contents().find("body").height());
+    }
+
+    layui.use(['element','laypage'], function(){
+        var $ = layui.jquery
+            ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+
+        var laypage = layui.laypage;
+        //触发事件
+
+        var active = {
+            tabAdd: function(title,url,id){
+                //新增一个Tab项
+                element.tabAdd('demo', {
+                    title: title
+                    ,content: '<iframe th:src="@{/hotelManage}" width="100%" class="layui-tab-item layui-show" frameborder="0" id="'+id+'" name="'+id+'" onload="changeFrameHeight()" >'+'</iframe>'
+                    ,id: id
+                })
+            }
+            ,tabDelete: function(){
+                //删除指定Tab项
+                element.tabDelete('demo', '44'); //删除：“商品管理”
+                othis.addClass('layui-btn-disabled');
+            }
+
+            ,tabChange: function(id){
+                //切换到指定Tab项
+                element.tabChange('demo', id); //切换到：用户管理
+            }
+        };
+
+
+        /**
+         * 监听导航栏点击
+         */
+        $('.layui-nav-tree').on('click','li dd a',function(){
+            iframeId = Date.parse(new Date());
+            active['tabAdd'].call($(this),$(this).text(),$(this).attr('data-url'),iframeId);
+            //添加tab后马上激活
+            active['tabChange'].call($(this),iframeId);
+        });
+
+    });
+</script>
+
+</body>
+
+</html>

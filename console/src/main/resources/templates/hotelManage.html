@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="context-path" th:content="@{/}" />
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <!-- load css -->
+    <link rel="stylesheet" type="text/css" th:href="@{css/iconfont.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{plugin/layui/css/layui.css}" media="all" />
+
+    <style type="text/css">
+        .opr_icon{
+            margin: 0 5px;
+        }
+        .opr_icon:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div style="padding: 20px">
+        <table class="layui-table" lay-size="sm">
+            <colgroup>
+                <col width="1" />
+                <col width="60"/>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col width="80"/>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col width="110" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th><i class="iconfont icon-gouxuanqian icon" select="false" id="all_select"></i></th>
+                    <th>城市</th>
+                    <th>名称</th>
+                    <th>地址</th>
+                    <th>经度</th>
+                    <th>纬度</th>
+                    <th>联系方式</th>
+                    <th>评分</th>
+                    <th>基本信息</th>
+                    <th>主要设施</th>
+                    <th>酒店服务</th>
+                    <th>酒店设施</th>
+                    <th>房间设施</th>
+                    <th>图片</th>
+                    <th>介绍</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <div class="layui-box layui-laypage layui-laypage-default" id="my_page"></div>
+    </div>
+
+    <!--引入js-->
+    <script type="text/javascript" th:src="@{js/jquery-3.2.1.min.js}" charset="utf-8"></script>
+    <script type="text/javascript" th:src="@{plugin/layui/layui.js}" charset="utf-8"></script>
+
+    <script type="text/javascript">
+
+        /*<![CDATA[*/
+
+        //全选事件
+        $("#all_select").on('click',function () {
+            $("[select]").each(function () {
+                $(this).attr('class', ($(this).attr('select') == "true") ? 'iconfont icon-gouxuanqian icon' : 'iconfont icon-kuangxuan icon');
+                $(this).attr('select', ($(this).attr('select') == "true") ? 'false' : 'true');
+            });
+        });
+
+        layui.use(['element','laypage'], function(){
+            var laypage = layui.laypage;
+
+            var BASE_CONTEXT_PATH = $('meta[name=context-path]').attr("content");
+            BASE_CONTEXT_PATH = BASE_CONTEXT_PATH.substr(0, BASE_CONTEXT_PATH.length - 1);
+            console.log("路径:"+BASE_CONTEXT_PATH);
+
+            $.ajax({
+                url:BASE_CONTEXT_PATH+'rest/hotels',
+                success:function(data){
+                    if (data.code == 200){
+                        var jsonArr = data.data.list;
+                        for (var i=0;i<jsonArr.length;i++){
+                            var tr= "<tr><td><i class='iconfont icon-gouxuanqian' select='false'></i></td>"+
+                                "<td>"+jsonArr[i].city+"</td>"+
+                                "<td>"+jsonArr[i].name+"</td>"+
+                                "<td>"+jsonArr[i].address+"</td>"+
+                                "<td>"+jsonArr[i].lng+"</td>"+
+                                "<td>"+jsonArr[i].lat+"</td>"+
+                                "<td>"+jsonArr[i].contact+"</td>"+
+                                "<td>"+jsonArr[i].grade+"</td>"+
+                                "<td>"+jsonArr[i].basicInfo+"</td>"+
+                                "<td>"+jsonArr[i].mainFacilities+"</td>"+
+                                "<td>"+jsonArr[i].hotelServes+"</td>"+
+                                "<td>"+jsonArr[i].hotelFacilities+"</td>"+
+                                "<td>"+jsonArr[i].roomFacilities+"</td>"+
+                                "<td>"+jsonArr[i].imgs+"</td>"+
+                                "<td>'"+jsonArr[i].introduce+"'</td>"+
+                                "<td>\
+                                <i class='iconfont icon-xiangqing opr_icon'></i>\
+                                <i class='iconfont icon-bianji opr_icon'></i>\
+                                <i class='iconfont icon-dustbin opr_icon'></i>\
+                                </td>\
+                                </tr>"
+                            $('tbody').append(tr);
+                        }
+                    }
+                },
+                error:function(a,b,c){
+                    alert("请求失败："+b);
+                }
+            });
+
+            laypage.render({
+                elem: 'my_page'
+                ,count: 70 //数据总数，从服务端得到
+                ,layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
+                ,jump: function(obj, first){
+                    //obj包含了当前分页的所有参数，比如：
+                    console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                    console.log(obj.limit); //得到每页显示的条数
+
+                    //首次不执行
+                    if(!first){
+                        //do something
+                    }
+                }
+            });
+        });
+
+        /*]]>*/
+    </script>
+</body>
+</html>
