@@ -3,7 +3,7 @@ package com.xxjqr.multiple_modules.core.comm.util;
 import com.github.pagehelper.ISelect;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.xxjqr.multiple_modules.comm.po.Pager;
+import com.xxjqr.multiple_modules.core.comm.po.Pager;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 

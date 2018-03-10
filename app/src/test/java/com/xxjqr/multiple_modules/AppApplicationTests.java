@@ -1,16 +1,15 @@
 package com.xxjqr.multiple_modules;
 
+
+
 import com.xxjqr.multiple_modules.core.article.mapper.ArticleMapper;
 import com.xxjqr.multiple_modules.core.article.po.Article;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-<<<<<<< HEAD
 import org.springframework.data.redis.core.StringRedisTemplate;
-=======
 import org.springframework.data.redis.core.RedisTemplate;
->>>>>>> d92fe3301867b7344c1fd06773fae5d67cb0f1a6
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
@@ -42,7 +41,6 @@ public class AppApplicationTests {
 	}
 
 	@Test
-<<<<<<< HEAD
 	public void testRedis(){
 //		stringRedisTemplate.opsForValue().set("key","value2");
 //		stringRedisTemplate.opsForHash().put("user","3","iphone");
@@ -56,8 +54,6 @@ public class AppApplicationTests {
 	}
 
 	@Test
-=======
->>>>>>> d92fe3301867b7344c1fd06773fae5d67cb0f1a6
 	@Ignore
 	public void testUtil(){
 		List<Integer> tmp = Arrays.asList(2,3);
@@ -65,14 +61,14 @@ public class AppApplicationTests {
 	}
 
 	@Test
-	public void testRedis(){
+	public void testRedis2(){
 		Article article = new Article();
 
-//		article.setId(1L);
-//		article.setSummary("asdf");
-//		article.setTitle("测试标题");
-//		article.setText("<p>asdf</p>");
-//		redisTemplate.opsForValue().set("cur_article",article);
+//		Article.setId(1L);
+//		Article.setSummary("asdf");
+//		Article.setTitle("测试标题");
+//		Article.setText("<p>asdf</p>");
+//		redisTemplate.opsForValue().set("cur_article",Article);
 
 		article = (Article) redisTemplate.opsForValue().get("cur_article");
 		System.out.println(article);

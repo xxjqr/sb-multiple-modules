@@ -1,7 +1,7 @@
 package com.xxjqr.multiple_modules.core.ref.mapper;
 
-import com.xxjqr.multiple_modules.core.ref.po.Area;
 import com.xxjqr.multiple_modules.core.comm.mapper.MyMapper;
+import com.xxjqr.multiple_modules.core.ref.po.Area;
 
 import java.util.List;
 
