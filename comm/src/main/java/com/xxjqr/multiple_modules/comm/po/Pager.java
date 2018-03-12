@@ -1,4 +1,4 @@
-package com.xxjqr.multiple_modules.core.comm.po;
+package com.xxjqr.multiple_modules.comm.po;
 
 import java.io.Serializable;
 import java.util.List;

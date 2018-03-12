@@ -1,4 +1,4 @@
-package com.xxjqr.multiple_modules.core.comm.web;
+package com.xxjqr.multiple_modules.comm.web;
 
 import lombok.Data;
 

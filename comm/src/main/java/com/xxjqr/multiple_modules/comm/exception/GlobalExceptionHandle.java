@@ -1,6 +1,6 @@
-package com.xxjqr.multiple_modules.core.comm.exception;
+package com.xxjqr.multiple_modules.comm.exception;
 
-import com.xxjqr.multiple_modules.core.comm.web.WebResponse;
+import com.xxjqr.multiple_modules.comm.web.WebResponse;
 import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

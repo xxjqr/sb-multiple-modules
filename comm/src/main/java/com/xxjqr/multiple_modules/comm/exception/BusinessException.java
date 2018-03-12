@@ -1,4 +1,4 @@
-package com.xxjqr.multiple_modules.core.comm.exception;
+package com.xxjqr.multiple_modules.comm.exception;
 
 import lombok.Data;
 

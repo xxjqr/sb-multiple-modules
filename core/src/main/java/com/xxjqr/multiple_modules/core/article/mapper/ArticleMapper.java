@@ -10,6 +10,6 @@ import java.util.List;
  * Created by xxjqr on 2018/3/10.
  */
 public interface ArticleMapper extends MyMapper<Article> {
-    @Select("select * from t_article")
+
     List<Article> listArticle();
 }

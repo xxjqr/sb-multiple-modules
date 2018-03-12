@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <!--根据需要加入有关配置-->
+
+    <settings>
+        <!--resultMap与类属性驼峰映射-->
+        <setting name="autoMappingBehavior" value="PARTIAL"/>
+        <!--类属性与表column驼峰映射-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <!-- 给予被嵌套的resultMap以字段-属性的映射支持 FULL,PARTIAL -->
+</configuration>

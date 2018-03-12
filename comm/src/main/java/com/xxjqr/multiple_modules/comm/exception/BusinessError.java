@@ -1,4 +1,4 @@
-package com.xxjqr.multiple_modules.core.comm.exception;
+package com.xxjqr.multiple_modules.comm.exception;
 
 /**
  * Created by xxjqr on 2017/8/31.

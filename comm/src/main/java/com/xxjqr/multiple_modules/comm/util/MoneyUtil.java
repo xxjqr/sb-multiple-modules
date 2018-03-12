@@ -1,4 +1,4 @@
-package com.xxjqr.multiple_modules.core.comm.util;
+package com.xxjqr.multiple_modules.comm.util;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -67,7 +67,7 @@ public class MoneyUtil {
         }
 
         //角，把值加在最前面
-        if (type==MoneyUtil.j) return money+sb.toString();
+        if (type== MoneyUtil.j) return money+sb.toString();
 
         //分，元 把值加到最后（元传进来的money肯定是0）
         return sb.append(money).toString();

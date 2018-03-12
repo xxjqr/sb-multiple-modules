@@ -14,12 +14,11 @@ import java.util.List;
 @Service
 public class ArticleServiceImpl implements ArticleService {
 
-//    @Resource
-//    private ArticleMapper aritcleMapper;
-//
-//    @Override
-//    public List<Article> listArticle() {
-//        aritcleMapper.listArticle();
-//        return null;
-//    }
+    @Resource
+    private ArticleMapper aritcleMapper;
+
+    @Override
+    public List<Article> listArticle() {
+        return aritcleMapper.listArticle();
+    }
 }

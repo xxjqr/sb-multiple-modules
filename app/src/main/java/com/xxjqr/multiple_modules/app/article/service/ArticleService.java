@@ -10,5 +10,5 @@ import java.util.List;
  * Created by xxjqr on 2017/8/27.
  */
 public interface ArticleService {
-//    List<Article> listArticle();
+    List<Article> listArticle();
 }
