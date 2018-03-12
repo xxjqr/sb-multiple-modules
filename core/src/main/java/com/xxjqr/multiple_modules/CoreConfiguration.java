@@ -16,18 +16,18 @@ import java.util.Properties;
 @SpringBootConfiguration
 public class CoreConfiguration {
 
-    @Bean
-    @ConditionalOnMissingBean
-    public SqlSessionFactory sqlSessionFactory(DataSource datasource) throws Exception{
-        SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
-        bean.setDataSource(datasource);
-        bean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
-        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        bean.setMapperLocations(resolver.getResources("classpath*:/com/xxjqr/multiple_modules/mybatis/**/*Mapper.xml"));
-        bean.setTypeAliasesPackage("com.xxjqr.multiple_modules.core.*.po,com.xxjqr.multiple_modules.core.*.vo");
-
-        return bean.getObject();
-    }
+//    @Bean
+//    @ConditionalOnMissingBean
+//    public SqlSessionFactory sqlSessionFactory(DataSource datasource) throws Exception{
+//        SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
+//        bean.setDataSource(datasource);
+//        bean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
+//        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+//        bean.setMapperLocations(resolver.getResources("classpath*:/com/xxjqr/multiple_modules/mybatis/**/*Mapper.xml"));
+//        bean.setTypeAliasesPackage("com.xxjqr.multiple_modules.core.*.po,com.xxjqr.multiple_modules.core.*.vo");
+//
+//        return bean.getObject();
+//    }
 
     @Bean
     public MapperScannerConfigurer mapperScannerConfigurer(){

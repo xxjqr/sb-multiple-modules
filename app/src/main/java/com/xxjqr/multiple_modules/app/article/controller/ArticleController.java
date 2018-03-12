@@ -19,9 +19,6 @@ public class ArticleController {
 
     @GetMapping(value = "list")
     public List<Article> listArticle() throws BusinessException {
-//        Article article = null;
-//        if (article==null)
-//            throw new BusinessException(BusinessError.参数错误);
         return articleService.listArticle();
     }
 
