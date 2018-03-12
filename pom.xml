@@ -18,6 +18,7 @@
 		<module>task</module>
 		<module>core</module>
         <module>comm</module>
+		<module>web</module>
     </modules>
 
 	<parent>

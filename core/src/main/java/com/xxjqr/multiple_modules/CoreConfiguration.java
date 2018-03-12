@@ -1,13 +1,33 @@
 package com.xxjqr.multiple_modules;
 
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.SqlSessionFactoryBean;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import tk.mybatis.spring.mapper.MapperScannerConfigurer;
 
+import javax.sql.DataSource;
 import java.util.Properties;
 
 @SpringBootConfiguration
 public class CoreConfiguration {
+
+    @Bean
+    @ConditionalOnMissingBean
+    public SqlSessionFactory sqlSessionFactory(DataSource datasource) throws Exception{
+        SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
+        bean.setDataSource(datasource);
+        bean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
+        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+        bean.setMapperLocations(resolver.getResources("classpath*:/com/xxjqr/multiple_modules/mybatis/**/*Mapper.xml"));
+        bean.setTypeAliasesPackage("com.xxjqr.multiple_modules.core.*.po,com.xxjqr.multiple_modules.core.*.vo");
+
+        return bean.getObject();
+    }
 
     @Bean
     public MapperScannerConfigurer mapperScannerConfigurer(){
