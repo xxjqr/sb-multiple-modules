@@ -1,10 +1,22 @@
-package com.xxjqr.multiple_modules.core.prod.po;
+package com.xxjqr.multiple_modules.core.hotel.po;
 
+import javax.persistence.Table;
+
+@Table(name = "t_hotel")
 public class Hotel {
     private Integer id;
-    private Integer name;
+    private String name;
+    private String description;
     private Integer price;
     private String address;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public Integer getId() {
         return id;
@@ -14,11 +26,11 @@ public class Hotel {
         this.id = id;
     }
 
-    public Integer getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(Integer name) {
+    public void setName(String name) {
         this.name = name;
     }
 

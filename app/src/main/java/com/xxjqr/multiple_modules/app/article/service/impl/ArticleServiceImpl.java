@@ -20,14 +20,13 @@ public class ArticleServiceImpl implements ArticleService {
     @Resource
     private ArticleMapper articleMapper;
 
-    @Transactional(rollbackFor=Exception.class)
+//    @Transactional(transactionManager = "articleTransactional",rollbackFor=Exception.class) //遇到Exception异常就回滚
     @Override
     public List<Article> listArticle() throws BusinessException {
-        Article article = new Article();
-        article.setTitle("测试一把咯");
-        article.setContent("测试一把又");
-        articleMapper.insert(article);
-
+//        Article article = new Article();
+//        article.setTitle("13:53测试");
+//        article.setContent("53测试");
+//        articleMapper.insert(article);
 //        if (true)
 //            throw new BusinessException(BusinessError.参数错误);
 
