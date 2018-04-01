@@ -19,6 +19,7 @@ public class ArticleController {
 
     @GetMapping(value = "list")
     public List<Article> listArticle() throws BusinessException {
+        int i=0;
         return articleService.listArticle();
     }
 
